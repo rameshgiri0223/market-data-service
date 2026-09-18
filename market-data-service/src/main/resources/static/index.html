@@ -1,11 +1,107 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Market Data Service</title>
-<link rel = "stylesheet" href="style.css">
+
+<link rel="stylesheet" href="/style.css">
 </head>
+
 <body>
+
+	<div class="container">
+
+		<h1>Market Data Service</h1>
+
+		<!-- Market Overview -->
+		<section>
+			<h2>Market Overview</h2>
+
+			<table>
+				<thead>
+					<tr>
+						<th>Symbol</th>
+						<th>Last Price</th>
+						<th>24h Change %</th>
+						<th>24h Volume</th>
+					</tr>
+				</thead>
+
+				<tbody id="marketTable"></tbody>
+			</table>
+		</section>
+
+
+		<!-- Order Book -->
+		<section>
+
+			<h2>Order Book</h2>
+
+			<div class="order-book-controls">
+
+				<label for="symbol">Spot Pair:</label> <select id="symbol">
+					<option value="BTC-USDT">BTC-USDT</option>
+					<option value="ETH-USDT">ETH-USDT</option>
+					<option value="SOL-USDT">SOL-USDT</option>
+					<option value="XRP-USDT">XRP-USDT</option>
+				</select>
+
+				<button id="connectButton">Connect</button>
+
+			</div>
+
+			<p id="connectionStatus">Not connected</p>
+
+
+			<div class="order-books">
+
+				<!-- Bids -->
+				<div>
+
+					<h3>Bids</h3>
+
+					<table>
+						<thead>
+							<tr>
+								<th>Price</th>
+								<th>Size</th>
+							</tr>
+						</thead>
+
+						<tbody id="bids"></tbody>
+					</table>
+
+				</div>
+
+
+				<!-- Asks -->
+				<div>
+
+					<h3>Asks</h3>
+
+					<table>
+						<thead>
+							<tr>
+								<th>Price</th>
+								<th>Size</th>
+							</tr>
+						</thead>
+
+						<tbody id="asks"></tbody>
+					</table>
+
+				</div>
+
+			</div>
+
+		</section>
+
+	</div>
+
+
+	<script src="/market.js"></script>
 
 </body>
 </html>

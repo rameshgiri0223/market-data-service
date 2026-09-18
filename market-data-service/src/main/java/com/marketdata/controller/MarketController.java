@@ -23,12 +23,6 @@ public class MarketController {
 	@GetMapping
 	public List<MarketData> getMarkets()
 	{
-//		try {
-//			return marketDataService.getMarketData();
-//		} catch (Exception e) {
-//			 return "Unable to Fetch Market Data From OKX";
-//		}
-		
 		return marketDataService.getMarketData();
 		
 	}
